@@ -1,0 +1,12 @@
+.bg-mynav {
+    background-color: #000000;
+  }
+ 
+  body {
+    font-size: 1.25rem;
+    background-color: #ffffff;
+  }
+ 
+  td {
+      line-height: 3rem;
+  }

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <title>CRUD FROM API</title>
+    <style>
+      /* Styling for rounded avatars */
+      .rounded-circle {
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">My App</a>
+        </div>
+    </nav>
+ 
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2>Users</h2>
+          <button type="button" class="btn btn-secondary" onclick="showUserCreateBox()">Create</button>
+        </div>
+ 
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Avatar</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Username</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="mytable">
+                <!-- Data from API will be inserted here -->
+            </tbody>            
+        </table>
+        </div>
+    </div>
+
+    <!-- Modal แก้ไขข้อมูล -->
+   <!-- Edit User Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">แก้ไขข้อมูลผู้ใช้</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="editUserId">
+                <div class="mb-3">
+                    <label for="editFirst" class="form-label">ชื่อ</label>
+                    <input type="text" class="form-control" id="editFirst">
+                </div>
+                <div class="mb-3">
+                    <label for="editLast" class="form-label">นามสกุล</label>
+                    <input type="text" class="form-control" id="editLast">
+                </div>
+                <div class="mb-3">
+                    <label for="editUsername" class="form-label">ชื่อผู้ใช้</label>
+                    <input type="text" class="form-control" id="editUsername">
+                </div>
+                <div class="mb-3">
+                    <label for="editAvatar" class="form-label">Avatar URL</label>
+                    <input type="text" class="form-control" id="editAvatar">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+                <button type="button" class="btn btn-primary" onclick="updateUser()">บันทึก</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- JavaScript -->
+    <script src="index.js"></script>  <!-- Include your external JS file -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
